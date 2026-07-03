@@ -1,0 +1,47 @@
+{
+  "trace_id": "0de94391",
+  "requirement": "Verify that the login page rejects an incorrect password.",
+  "target_env": "staging",
+  "test_plan": {
+    "requirement": "Verify that the login page rejects an incorrect password.",
+    "scope": "Verify login form correctly rejects invalid credentials and displays the appropriate error message on the demo login page.",
+    "out_of_scope": [
+      "Password reset flow",
+      "Account lockout after N attempts",
+      "SSO login"
+    ],
+    "scenarios": [
+      {
+        "id": "TC-001",
+        "title": "Login fails with correct username and incorrect password",
+        "priority": "P0",
+        "preconditions": [
+          "User navigates to the login page",
+          "A valid username exists in the system"
+        ],
+        "steps": [],
+        "tags": [
+          "auth",
+          "negative",
+          "smoke"
+        ]
+      }
+    ],
+    "risk_notes": [
+      "Error message text is an exact-match assertion; a future copy change would need this test updated."
+    ]
+  },
+  "results": [
+    {
+      "test_id": "TC-001",
+      "status": "error",
+      "duration_ms": 0,
+      "steps_executed": 0,
+      "failure_reason": "unknown",
+      "error_message": "Guardrail blocked execution: navigate() blocked: 'demo.aiqef.local' is not in the allowed domain list for target_env='staging': ['staging.yourapp.com']",
+      "screenshot_path": null
+    }
+  ],
+  "healing_attempts": 0,
+  "guardrail_retry_count": 0
+}

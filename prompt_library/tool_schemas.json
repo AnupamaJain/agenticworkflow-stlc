@@ -1,0 +1,49 @@
+{
+  "tools": [
+    {
+      "name": "navigate",
+      "description": "Load a URL in the browser session.",
+      "args": {"url": "string, required"}
+    },
+    {
+      "name": "find_element",
+      "description": "Locate an element without interacting with it. Raises if not found.",
+      "args": {"by": "css | xpath | id | text", "value": "string"}
+    },
+    {
+      "name": "send_keys",
+      "description": "Type text into an input element.",
+      "args": {"by": "css | xpath | id | text", "value": "string", "input_text": "string"}
+    },
+    {
+      "name": "click",
+      "description": "Click an element.",
+      "args": {"by": "css | xpath | id | text", "value": "string"}
+    },
+    {
+      "name": "get_text",
+      "description": "Read the visible text content of an element.",
+      "args": {"by": "css | xpath | id | text", "value": "string"}
+    },
+    {
+      "name": "get_page_source",
+      "description": "Return the full current DOM as HTML. Used by the Self-Healing Agent to re-locate moved/renamed elements.",
+      "args": {}
+    },
+    {
+      "name": "screenshot",
+      "description": "Capture a PNG screenshot for evidence, saved to the given path.",
+      "args": {"path": "string"}
+    },
+    {
+      "name": "wait_for",
+      "description": "Explicit wait for an element to appear before proceeding.",
+      "args": {"by": "css | xpath | id | text", "value": "string", "timeout_s": "number, default 5.0"}
+    },
+    {
+      "name": "execute_script",
+      "description": "Run arbitrary JavaScript. Heavily deny-listed by guardrails; avoid unless strictly necessary.",
+      "args": {"script": "string"}
+    }
+  ]
+}

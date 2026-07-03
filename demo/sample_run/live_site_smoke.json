@@ -1,0 +1,51 @@
+{
+  "base_url": "https://automationexercise.com",
+  "mode": "live_read_only_http_smoke",
+  "summary": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  },
+  "results": [
+    {
+      "name": "home",
+      "url": "https://automationexercise.com/",
+      "status": "passed",
+      "status_code": 200,
+      "duration_ms": 1091,
+      "title": "Automation Exercise",
+      "missing_text": [],
+      "error": null
+    },
+    {
+      "name": "products",
+      "url": "https://automationexercise.com/products",
+      "status": "passed",
+      "status_code": 200,
+      "duration_ms": 478,
+      "title": "Automation Exercise - All Products",
+      "missing_text": [],
+      "error": null
+    },
+    {
+      "name": "test_cases",
+      "url": "https://automationexercise.com/test_cases",
+      "status": "passed",
+      "status_code": 200,
+      "duration_ms": 1088,
+      "title": "Automation Practice Website for UI Testing - Test Cases",
+      "missing_text": [],
+      "error": null
+    },
+    {
+      "name": "api_list",
+      "url": "https://automationexercise.com/api_list",
+      "status": "passed",
+      "status_code": 200,
+      "duration_ms": 505,
+      "title": "Automation Practice for API Testing",
+      "missing_text": [],
+      "error": null
+    }
+  ]
+}

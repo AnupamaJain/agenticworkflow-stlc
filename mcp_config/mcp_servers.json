@@ -1,0 +1,38 @@
+{
+  "mcp_servers": [
+    {
+      "name": "selenium",
+      "command": "npx",
+      "args": ["-y", "selenium-mcp-server"],
+      "env": {
+        "BROWSER": "chrome",
+        "HEADLESS": "true"
+      },
+      "tools": [
+        "navigate", "find_element", "click", "send_keys",
+        "get_text", "get_page_source", "screenshot", "wait_for", "execute_script"
+      ]
+    },
+    {
+      "name": "filesystem",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "./demo/sample_run"],
+      "tools": ["write_file", "read_file", "list_directory"]
+    }
+  ],
+  "guardrails": {
+    "allowed_tools": [
+      "navigate", "find_element", "click", "send_keys",
+      "get_text", "get_page_source", "screenshot", "wait_for",
+      "write_file", "read_file"
+    ],
+    "allowed_domains": {
+      "sandbox": ["demo.aiqef.local", "localhost"],
+      "staging": ["staging.yourapp.com"],
+      "production": []
+    },
+    "max_tool_calls_per_test": 40,
+    "execute_script_enabled": false
+  },
+  "_comment": "execute_script is intentionally excluded from allowed_tools by default — see guardrails/mcp_guardrails.py HARD_DENY_SCRIPT_PATTERNS. Enable only if you understand the risk and have reviewed the deny-list patterns."
+}
